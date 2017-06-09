@@ -27,6 +27,8 @@ rabbitmq_vhosts: []                     # Ensure the vhosts are exists
 
 rabbitmq_users_remove:                  # Ensure the users removed
   - guest
+
+rabbitmq_allow_remote_connection: no
 ```
 
 #### Usage

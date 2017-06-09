@@ -6,6 +6,12 @@
 - include: install.yum.yml
   when: ansible_os_family == 'RedHat' and not rabbitmq_docker
 
+- name: Drop configuration file if remote connection is allowed
+  when: rabbitmq_allow_remote_connection|bool == true
+  copy:
+    dest: /etc/rabbitmq/rabbitmq.config
+    content: "[{rabbit, [{loopback_users, []}]}].\n"
+
 - name: Ensure RabbitMQ is running
   service: name=rabbitmq-server state=started
 

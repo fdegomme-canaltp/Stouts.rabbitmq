@@ -26,3 +26,5 @@ rabbitmq_docker_net: bridge
 rabbitmq_docker_user: guest
 rabbitmq_docker_pass: guest
 rabbitmq_docker_vhost: "/"
+
+rabbitmq_allow_remote_connection: yes
